@@ -1,2 +1,14 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+{{#each blogs as |blog| }}
+<div class="d-flex flex-row"></div>
+<div class="card border-info mb-3">
+    <div class="card-header d-flex justify-content-between">{{blog.blog_title}} <small>Created: {{format_date blog.date_created}} </small></div>
+    <div class="card-body">
+        <h4 class="card-title"></h4>
+        <p class="card-text"> {{blog.description}} </p>
+
+    </div>
+    </div>
+    {{/each}}
