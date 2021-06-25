@@ -1,31 +1,81 @@
 const router = require('express').Router();
-const Blog = require('../models/Blog');
+const { Blog, User } = require('../models');
 //For Auth
-//const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
-  // We find all dishes in the db and set the data equal to dishData
-  const blogData = await Blog.findAll().catch((err) => {
-    res.json(err);
-  });
-  // We use map() to iterate over blogData and then add .get({ plain: true }) each object to serialize it. 
-  const blogs = blogData.map((blog) => blog.get({ plain: true }));
-  // We render the template, 'all', passing in dishes, a new array of serialized objects.
-  res.render('homePage', { blogs });
+  try {
+    // Get all projects and JOIN with user data
+    const blogData = await Blog.findAll({
+      include: [
+        {
+          model: User
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('homePage', {
+      blogs,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
+router.get('/blog/:id', async (req, res) => {
+  try {
+    const blogData = await Blog.findByPk(req.params.id, {
+      include: [
+        {
+          model: User
+        },
+      ],
+    });
+
+    const blogs = blogData.get({ plain: true });
+
+    res.render('blog', {
+      ...blogs,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Blog }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('dashboard', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
 
   res.render('login');
 });
-
-
 
 module.exports = router;

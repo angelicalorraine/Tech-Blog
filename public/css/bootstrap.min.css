@@ -4327,12 +4327,6 @@ fieldset:disabled .btn {
   color: #fff;
 }
 
-.card-body:hover {
-  z-index: 1;
-  color: #fff;
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.4);
-}
 .card-title {
   margin-bottom: 1rem;
 }

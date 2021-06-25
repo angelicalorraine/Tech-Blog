@@ -1,6 +1,14 @@
-const Traveller = require('./');
-const Location = require('./');
+const Blog = require('./Blog');
+const User = require('./User');
 const Trip = require('./');
 
+User.hasMany(Blog, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
 
-module.exports = {};
+Blog.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+
+module.exports = { Blog, User };
