@@ -1,25 +1,22 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our Location model
-class Blog extends Model { }
+class Post extends Model { }
 
-// create fields/columns for  model
-Blog.init(
+Post.init(
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
         },
-        blog_title: {
+        title: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
-        description: {
+        content: {
             type: DataTypes.TEXT,
-            allowNull: true,
+            allowNull: false,
         },
         date_created: {
             type: DataTypes.DATE,
@@ -33,13 +30,14 @@ Blog.init(
                 key: 'id',
             },
         },
-
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'blog',
-    });
+        modelName: 'post',
+    }
+);
 
-module.exports = Blog;
+module.exports = Post;

@@ -1,0 +1,34 @@
+[
+  {
+    "title": "CodePen Blog",
+    "content": "This is where we post announcements, tips and tricks, new and updated features, fun roundups, new podcast episodes, and more. There's an RSS feed. blog.https://blog.codepen.io/"
+  },
+  {
+    "title": "The Daily WTF Blog",
+    "content": "your how-not-to guide for developing software. We recount tales of disastrous development, from project management gone spectacularly bad to inexplicable coding choices. https://thedailywtf.com/"
+  },
+  {
+    "title": "W3 Schools ",
+    "content": "W3Schools is a free, exceptional resource for beginner tutorials. W3Schools includes tutorials and references on web development languages such as HTML, CSS, JavaScript, PHP, SQL, and JQuery, covering most aspects of web programming. The site has been around since 1998 and focuses on keeping learning simple, as it should be. Tutorials start with the fundamentals and move all the way up to complete professional references. https://www.w3schools.com/"
+  },
+  {
+    "title": "CSS Tricks",
+    "content": "the blog has become all about web design and development. It provides you with video screencasts about HTML, Flexbox, building games with JavaScript and more. It contains a section with complete guides ranging from table elements to jQuery to CSS Gradients, as well as an almanac that lists CSS selectors and properties. There is also a forum for comments and questions and a page for job postings as well. https://css-tricks.com/."
+  },
+  {
+    "title": "The Crazy Programmer",
+    "content": "This blog provides informative articles about programming and the tech scene in addition to programs, tutorials, and practice interview questions about C, C++, Java, Android, Python, .Net, PHP, Javascript, SQL and PL/SQL. https://www.thecrazyprogrammer.com/"
+  },
+  {
+    "title": "David Walsh Blog",
+    "content": "This blog mainly covers HTML5, CSS, and JavaScript as well as AJAX, jQuery, and Canvas. The posts are structured as tutorials with goals and examples, instead of theories and vague guidelines. It definitely will serve as a great place for you to learn. David Walsh posts frequently. https://davidwalsh.name/"
+  },
+  {
+    "title": "MDN Web Docs",
+    "content": "Resources for developers, by developers. A perfect place to go to when you need anything from tutorials, refrences, developer guides and an informative hacks blog to help with HTML, CSS, Javascript, Graphics, HTTP, APIs, Browser Extensions. https://developer.mozilla.org/en-US/"
+  },
+  {
+    "title": "Codecademy",
+    "content": "We invented the best system for learning to code. From building websites to analyzing data, the choice is yours. No matter your experience level, you'll be writing real, working code in minutes."
+  }
+]

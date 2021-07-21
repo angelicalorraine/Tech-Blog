@@ -1,0 +1,22 @@
+[
+  {
+    "user_id": 1,
+    "post_id": 1,
+    "comment": "Love this Blog!"
+  },
+  {
+    "user_id": 2,
+    "post_id": 3,
+    "comment": "Amazing sources!"
+  },
+  {
+    "user_id": 3,
+    "post_id": 1,
+    "comment": "Use these resources all the time!"
+  },
+  {
+    "user_id": 3,
+    "post_id": 5,
+    "comment": "Bookmarked for future!"
+  }
+]

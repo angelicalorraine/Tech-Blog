@@ -1,4 +1,5 @@
-header, .project:not(:last-child) {
+header,
+.project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
@@ -21,4 +22,12 @@ header, .project:not(:last-child) {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
+}
+
+.comments {
+  border: solid 1px rgba(255, 255, 255, 0.247);
+}
+
+.comment {
+  margin: 5px 15px;
 }
