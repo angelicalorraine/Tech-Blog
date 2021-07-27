@@ -2,6 +2,18 @@ header,
 .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
+body {
+  font-family: roboto;
+}
+p {
+  font-size: 18px;
+  font-family: roboto;
+}
+
+h3,
+h4 {
+  font-family: Roboto;
+}
 
 .no-button {
   background: none;
