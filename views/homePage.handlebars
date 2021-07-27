@@ -8,9 +8,9 @@
 <div class="card border-info mb-3">
     
         <div class="card-header d-flex justify-content-between">
-            <a href="post/{{id}}"><h4>{{post.title}}</h4>
+            <a href="post/{{post.id}}"><h4>{{post.title}}</h4>
     </a>
-    <small> {{ user.username}} Created: {{format_date post.date_created}} </small></a>
+    <small> {{ post.user.username}} Created: {{format_date post.date_created}} </small></a>
 </div>
 <div class="card-body">
     <h4 class="card-title"></h4>
@@ -26,10 +26,10 @@
    <div class= "comment">
     <table class="table ">
       
-        {{#each post.comments}}
+        {{#each comments as |comment| }}
 
     <tr>
-        <td> &mdash;{{format_date createdAt}}</td> <td>{{comment}}</td>
+        <td> &ndash; {{ user.username }} {{format_date post.date_created}} </td> <td>{{comment.comment}}</td>
 
     </tr>
     </div>

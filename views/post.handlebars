@@ -1,0 +1,23 @@
+<div class="card border-info mb-2 mx-2 ">
+
+        <div class="card-header d-flex justify-content-between ">
+            <h4>{{title}} </h4>
+
+    <small> <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+    </small>
+</div>
+<div class="card-body">
+    <h4 class="card-title">Info card title</h4>
+    <p class="card-text"> {{content}} </p>
+            <form class="form new-post-form">
+                <div class="form-group">
+                    <label for="post-comment">Comment</label>
+                    <textarea class="form-input form-control" placeholder="Enter post comment" id="post-comment"
+                        name="post-comment"></textarea>
+                </div>
+                <div class="text-center">
+                    <button id="btn-submit" type="submit" class="btn btn-info">Submit</button>
+                </div>
+            </form>
+</div>
+</div>
