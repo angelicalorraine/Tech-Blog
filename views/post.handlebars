@@ -1,6 +1,6 @@
 <div class="card border-info mb-2 mx-2 ">
 
-        <div class="card-header d-flex justify-content-between ">
+        <div class="card-header d-flex justify-content-between py-1">
             <h4>{{title}} </h4>
 
     <small> <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
@@ -9,7 +9,8 @@
 <div class="card-body">
     <h4 class="card-title">Info card title</h4>
     <p class="card-text"> {{content}} </p>
-            <form class="form new-post-form">
+            <form id="addComment" class="form ">
+                    <input type="hidden" name="post-id" value="{{id}}" />
                 <div class="form-group">
                     <label for="post-comment">Comment</label>
                     <textarea class="form-input form-control" placeholder="Enter post comment" id="post-comment"
@@ -21,3 +22,5 @@
             </form>
 </div>
 </div>
+
+    <script src="/js/comment.js"></script>
