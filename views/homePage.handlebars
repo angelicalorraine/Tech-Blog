@@ -2,10 +2,9 @@
 <p>Welcome to {{title}}</p>
 
 
-
 {{#each posts as |post| }}
-<div class="d-flex flex-column-a">
-<div class="card border-info mb-3">
+<div class="d-flex flex-column-a justify-content-center" >
+<div class="card border-info mb-3" style="max-width: 70rem;">
     
         <div class="card-header d-flex justify-content-between py-1">
             <a href="post/{{post.id}}"><h3>{{post.title}}</h3>
