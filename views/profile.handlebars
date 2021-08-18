@@ -1,56 +1,89 @@
+<div class="d-flex flex-column mx-4 profile">
 <h2>Welcome, {{username}}!</h2>
-<button class="btn btn-success" data-toggle="modal" data-target="#newPostModal">NEW POST</button>
+
+
 <h3>Current posts:</h3>
+{{#if posts.length}}
 
 {{#each posts as |post|}}
 
-<div class="card border-info mb-3" style="max-width: 70rem;">
+
+<div class="card border-info mb-3 " style="max-width: 50rem;">
 
     <div class="card-header d-flex justify-content-between py-1">
+        <div class="">
     <a href="post/{{post.id}}">
-         <h3>{{post.title}} </h3>
-    </a>
-    <small> <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
-    </small>
+         <h3>{{post.title}} </h3></a>
+</div>
+
+      
+     <div class="delete"> <button type="submit" class="btn btn-danger" data-id="{{post.id}}" > DELETE 
+
+     </button></div>
+   
+
     </div>
 
     <div class="card-body">
         <h4 class="card-title"></h4>
-<p class="card-text"> {{post.content}} </p>
+        <p class="card-text"> {{post.content}} </p>
     </div>
 
+
+  
 </div>
+
+
 {{/each}}
+
+{{else}}
+<p>You don't have any favors.</p>
+</div>
+{{/if}}
 </div>
 
-<button class="btn btn-primary">New post!</button>
-
+<button class="btn btn-success" data-toggle="modal" data-target="#newPostModal">NEW POST</button>
 <div class="modal" id="newPostModal" tabindex="-1" role="dialog"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
+
             <div class="modal-header">
                 <h5 class="modal-title" id="AddNewPost">Add New Post</h5>
-
             </div>
+
             <form class="form new-post-form">
+
+
                 <div class="modal-body">
+
+
                     <div class="row mt-1">
+
+
                         <div class="form-group ">
                             <label for="post-title">Title </label>
                             <input class="form-input form-control mb-3" type="text" id="post-title" name="post-title"
                                 value="{{post.title}}">
-                            <div class="form-group">
+                        </div>
+
+                        <div class="form-group">
                                 <label for="post-content">Description</label>
                                 <input class="form-input form-control mb-3" type="text" id="post-content"
                                     name="post-content" value="{{post.content}}">
-                                    <div class="modal-footer">
+                        </div>
+
+                        <div class="modal-footer">
                                         <button type="submit" id="btn-submit" class="btn btn-primary">Save Post</button>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
-                                    </div>
-                            </div>
                         </div>
+                       
                     </div>
+
+
+                </div>
+
+
             </form>
         </div>
     </div>
@@ -60,31 +93,8 @@
 
 
 
-    <div class="card border-success mb-3" style="max-width: 50rem;">
-        <div class="card-header"><legend>New Post</legend></div>
-        <div class="card-body">
-<form>
-    <fieldset>
-
-        <div class="form-group">
-            <label for="exampleInputEmail1" class="form-label mt-4">Post Title</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="">
-
-        </div>
-        <div class="form-group">
-            <label for="postTextarea" class="form-label mt-4">Post Details</label>
-            <textarea class="form-control" id="postTextarea" rows="3"></textarea>
-        </div>
-
-    </fieldset>
-</form>
-        </div>
-    </div>
 
 
 
 
         <script src="./js/profile.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

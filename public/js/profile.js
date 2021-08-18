@@ -30,7 +30,7 @@ const delButtonHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/profile');
         } else {
             alert('Failed to delete project');
         }
@@ -42,5 +42,7 @@ document
     .addEventListener('submit', newFormHandler);
 
 document
-    .querySelector('.btn-danger')
+    .querySelector('.delete')
     .addEventListener('click', delButtonHandler);
+
+
