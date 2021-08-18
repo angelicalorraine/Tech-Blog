@@ -15,6 +15,12 @@ h4 {
   font-family: Roboto;
 }
 
+.container {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .no-button {
   background: none;
   border: none;

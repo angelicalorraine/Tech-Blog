@@ -1,9 +1,11 @@
+
+
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 
 
 {{#each posts as |post| }}
-<div class="d-flex flex-column-a justify-content-center" >
+
 <div class="card border-info mb-3" style="max-width: 70rem;">
     
         <div class="card-header d-flex justify-content-between py-1">
@@ -11,6 +13,7 @@
     </a>
      {{ post.user.username}} Created: {{format_date post.date_created}} </a>
 </div>
+
 <div class="card-body">
     <h4 class="card-title"></h4>
     <p class="card-text"> {{post.content}} </p>
@@ -34,16 +37,11 @@
     </div>
     {{/each}}
     </table>
-    
-</div>
+
+
 {{/if}}
 </div>
-          
-
 </div>
-</div>
-
-
 </div>
 {{/each}}
-</div>
+
