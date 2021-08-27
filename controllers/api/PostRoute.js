@@ -2,32 +2,9 @@ const router = require('express').Router();
 const { Post, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
-    try {
-        const postData = await Post.findAll({
-            include: [{ model: User }],
-        });
-        res.status(200).json(postData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
 
-router.get('/:id', async (req, res) => {
-    try {
-        const postData = await Post.findByPk(req.params.id, {
-            include: [{ model: User }]
-            ,
-        });
-        if (!postData) {
-            res.status(404).json({ message: 'No Post found with that id!' });
-            return;
-        }
-        res.status(200).json(postData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+
+
 
 
 
@@ -41,6 +18,28 @@ router.post('/', withAuth, async (req, res) => {
         res.status(200).json(newPost);
     } catch (err) {
         res.status(400).json(err);
+    }
+});
+
+router.get('/:id', async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                User,
+                {
+                    model: Comment,
+                    include: [User],
+                },
+            ],
+        });
+        const post = postData.get({ plain: true });
+
+        res.render('post', {
+            ...post,
+
+        });
+    } catch (err) {
+        res.status(500).json(err);
     }
 });
 
@@ -59,7 +58,7 @@ router.put('/:id', withAuth, async (req, res) => {
         );
         res.status(200).json(newPost);
     } catch (err) {
-        res.status(400).json(err);
+        res.status(400).json({ message: 'Please Sign In!' });
     }
 })
 
