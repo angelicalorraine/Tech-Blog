@@ -1,14 +1,15 @@
 <div class="d-flex flex-column m-5 p-4">
 <div class="card border-info mb-2 mx-2 ">
 
-        <div class="card-header d-flex justify-content-between py-1">
-            <h4>{{title}} </h4>
+        <div class="card-header d-flex justify-content-between  py-1">
+          <div class="d-flex"> <h4>{{title}} </h4> </div>
 
-    <div class="delete-button" data-id="{{id}}"> <button class="btn btn-sm btn-danger " data-id="{{id}}">DELETE</button></div> <div> <button class="btn btn-warning " data-toggle="modal" data-target="#editmodal" data-id="{{id}}">EDIT</button> </div>
-    
+
+                
+
 </div>
-<div class="card-body">
-    <h4 class="card-title">Info card title</h4>
+<div class="card-body post">
+
     <p class="card-text"> {{content}} </p>
             <form id="addComment" class="form ">
                     <input type="hidden" name="post-id" value="{{id}}" />
@@ -21,15 +22,15 @@
                     <button id="btn-submit" type="submit" class="btn btn-info">Submit</button>
                 </div>
             </form>
+
+</div>
             <div class="card-footer d-flex flex-row justify-content-around">
-                <div class="delete-button " data-id="{{id}}"> <button class="btn btn-danger " data-id="{{id}}">DELETE</button>
+                <div class="d-flex" data-id="{{id}}"> <button class="btn  btn-danger " data-id="{{id}}">DELETE</button>
                 </div>
-                <div class="">
-                    <button class="btn btn-warning " data-toggle="modal" data-target="#editmodal" data-id="{{id}}">EDIT</button>
+                <div class="d-flex">
+                    <button class="btn  btn-warning " data-toggle="modal" data-target="#editmodal" data-id="{{id}}">EDIT</button>
                 </div>
             </div>
-</div>
-
 </div>
 <div class="modal" id="editmodal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -39,7 +40,7 @@
                 <h5 class="modal-title" id="EditPost">Add New Post</h5>
             </div>
 
-            <form data-id="{{id}}" class="form edit-post-form">
+            <form data-id="{{id}}" class="form mb-2 edit-post-form">
                 <div class="modal-body">
                     <div class="row mt-1">
                         <div class="form-group ">
@@ -55,10 +56,6 @@
 
                         </div>
 
-                        <div class="modal-footer">
-                            <button type="submit" id="btn-submit" class="btn btn-primary">Save Post</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
 
                     </div>
 
